@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Frames Website</title>
+</head>
+
+<!-- Divide page into 3 rows -->
+<frameset rows="25%,10%,65%" border="3" bordercolor="dodgerblue">
+    <!-- 1st row: logo | header -->
+    <frameset cols="25%,75%" border="3" bordercolor="steelblue">
+        <frame src="logo.html" name="logoFrame">
+        <frame src="heading.html" name="headerFrame">
+    </frameset>
+
+    <!-- 2nd row: top menu -->
+    <frame src="menu.html" name="menuFrame">
+
+    <!-- 3rd row: services | main content -->
+    <frameset cols="25%,75%" border="3" bordercolor="lightseagreen">
+        <frame src="services.html" name="leftFrame">
+        <frame src="description.html" name="rightFrame">
+    </frameset>
+</frameset>
+
+</html>
