@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+
+  <h1>Quiz</h1>
+
+  <!-- Question 1 -->
+  <p>1. What is the short form of 'Web Application Development'?</p>
+  <input type="text" id="q1">
+  <button onclick="checkQ1()">Submit</button>
+  <p id="f1"></p>
+
+  <!-- Question 2 -->
+  <p>2. What does HTML stand for?</p>
+  <input type="text" id="q2">
+  <button onclick="checkQ2()">Submit</button>
+  <p id="f2"></p>
+
+  <!-- Question 3 -->
+  <p>3. Which language is used for styling web pages?</p>
+  <input type="text" id="q3">
+  <button onclick="checkQ3()">Submit</button>
+  <p id="f3"></p>
+
+  <!-- Question 4 -->
+  <p>4. What does JS stand for?</p>
+  <input type="text" id="q4">
+  <button onclick="checkQ4()">Submit</button>
+  <p id="f4"></p>
+
+  <script>
+    function checkQ1() {
+      let ans = document.getElementById("q1").value;
+      if (ans.toUpperCase() === "WAD") {
+        document.getElementById("f1").innerText = "Correct!";
+      } else {
+        document.getElementById("f1").innerText = "Incorrect. Answer: WAD";
+      }
+    }
+
+    function checkQ2() {
+      let ans = document.getElementById("q2").value;
+      if (ans.toLowerCase() === "hypertext markup language") {
+        document.getElementById("f2").innerText = "Correct!";
+      } else {
+        document.getElementById("f2").innerText = "Incorrect. Answer: HyperText Markup Language";
+      }
+    }
+
+    function checkQ3() {
+      let ans = document.getElementById("q3").value;
+      if (ans.toUpperCase() === "CSS") {
+        document.getElementById("f3").innerText = "Correct!";
+      } else {
+        document.getElementById("f3").innerText = "Incorrect. Answer: CSS";
+      }
+    }
+
+    function checkQ4() {
+      let ans = document.getElementById("q4").value;
+      if (ans.toLowerCase() === "javascript") {
+        document.getElementById("f4").innerText = "Correct!";
+      } else {
+        document.getElementById("f4").innerText = "Incorrect. Answer: JavaScript";
+      }
+    }
+  </script>
+
+</body>
+</html>

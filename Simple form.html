@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form Validation</title>
+</head>
+<body>
+
+<h3>Registration Form</h3>
+
+<form onsubmit="return validateForm()">
+    Name: <br>
+    <input type="text" id="name"><br><br>
+
+    Email: <br>
+    <input type="text" id="email"><br><br>
+
+    Password: <br>
+    <input type="password" id="password"><br><br>
+
+    Phone Number: <br>
+    <input type="text" id="phone"><br><br>
+
+    Date of Birth: <br>
+    <input type="date" id="dob"><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<p id="msg"></p>
+
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let phone = document.getElementById("phone").value;
+
+    // Name: at least 3 letters, only alphabets
+    let namePattern = /^[A-Za-z]{3,}$/;
+    if (!namePattern.test(name)) {
+        alert("Name must be at least 3 letters and contain only alphabets");
+        return false;
+    }
+
+    // Email format
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Invalid email format");
+        return false;
+    }
+
+    // Password strength
+    let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+    if (!passwordPattern.test(password)) {
+        alert("Password must be 8+ chars with uppercase, lowercase, number, and special character");
+        return false;
+    }
+
+    // Phone number: exactly 10 digits
+    let phonePattern = /^\d{10}$/;
+    if (!phonePattern.test(phone)) {
+        alert("Phone number must be exactly 10 digits");
+        return false;
+    }
+
+    alert("Form submitted successfully!");
+    return true;
+}
+</script>
+
+</body>
+</html>
