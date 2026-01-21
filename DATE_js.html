@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Date and Factorial</title>
+</head>
+<body>
+
+    <h2>Date and Factorial</h2>
+
+    <label>Current Date:</label>
+    <input type="text" id="dateBox">
+    <br><br>
+
+    <button onclick="displayDate()">Display Date</button>
+    <br><br>
+
+    <button onclick="findFactorial()">Find Factorial</button>
+
+    <script>
+        function displayDate() {
+            var today = new Date();
+            document.getElementById("dateBox").value = today;
+        }
+
+        function findFactorial() {
+            var n = prompt("Enter a number:");
+            var fact = 1;
+
+            for (var i = 1; i <= n; i++) {
+                fact = fact * i;
+            }
+
+            alert("Factorial of " + n + " is: " + fact);
+        }
+    </script>
+
+</body>
+</html>
