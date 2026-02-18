@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Number to Words</title>
+</head>
+<body>
+
+<h2>Enter a number (0 - 999)</h2>
+
+<input type="text" id="num" maxlength="3">
+<button onclick="convert()">Convert</button>
+
+<p id="result"></p>
+
+<script>
+
+function convert() {
+
+    var n = document.getElementById("num").value;
+    var result = document.getElementById("result");
+
+    // Check if empty
+    if (n == "") {
+        result.innerHTML = "Please enter a number";
+        return;
+    }
+
+    // Check if only digits
+    if (isNaN(n)) {
+        result.innerHTML = "Only numbers are allowed";
+        return;
+    }
+
+    // Convert string to number
+    n = parseInt(n);
+
+    // Check range
+    if (n < 0 || n > 999) {
+        result.innerHTML = "Enter number between 0 and 999";
+        return;
+    }
+
+    var ones = ["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"];
+    var tens = ["","","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"];
+    var teens = ["Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"];
+
+    var words = "";
+
+    if (n < 10) {
+        words = ones[n];
+    }
+    else if (n < 20) {
+        words = teens[n - 10];
+    }
+    else if (n < 100) {
+        words = tens[Math.floor(n / 10)] + " " + ones[n % 10];
+    }
+    else {
+        words = ones[Math.floor(n / 100)] + " Hundred ";
+
+        var remainder = n % 100;
+
+        if (remainder < 10) {
+            words = words + ones[remainder];
+        }
+        else if (remainder < 20) {
+            words = words + teens[remainder - 10];
+        }
+        else {
+            words = words + tens[Math.floor(remainder / 10)] + " " + ones[remainder % 10];
+        }
+    }
+
+    result.innerHTML = words;
+}
+
+</script>
+
+</body>
+</html>
