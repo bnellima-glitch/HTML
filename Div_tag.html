@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Simple Div Website</title>
+
     <style>
         body {
             margin: 0;
@@ -15,18 +16,15 @@
 
         .logo {
             width: 25%;
-            border: 3px solid dodgerblue;
         }
 
         .header {
             width: 75%;
-            border: 3px solid steelblue;
         }
 
         /* Row 2 */
         .menu {
             height: 10vh;
-            border: 3px solid green;
         }
 
         /* Row 3 */
@@ -37,12 +35,16 @@
 
         .services {
             width: 25%;
-            border: 3px solid lightseagreen;
         }
 
         .description {
             width: 75%;
-            border: 3px solid orange;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
@@ -52,25 +54,27 @@
     <!-- Row 1 -->
     <div class="top">
         <div class="logo">
-            <h2>Logo</h2>
+            <iframe src="logo.html"></iframe>
         </div>
+
         <div class="header">
-            <h2>Heading</h2>
+            <iframe src="heading.html"></iframe>
         </div>
     </div>
 
     <!-- Row 2 -->
     <div class="menu">
-        <h2>Menu</h2>
+        <iframe src="menu.html"></iframe>
     </div>
 
     <!-- Row 3 -->
     <div class="bottom">
         <div class="services">
-            <h2>Services</h2>
+            <iframe src="services.html"></iframe>
         </div>
+
         <div class="description">
-            <h2>Description</h2>
+            <iframe src="description.html"></iframe>
         </div>
     </div>
 
