@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Email Check</title>
+
+    <!-- add angularjs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="myCtrl">
+
+    <form name="f">
+
+        <label>Email:</label>
+        <input type="email" name="e" ng-model="email" required>
+
+        <!-- error -->
+        <p style="color:red" ng-show="f.e.$dirty && f.e.$invalid">
+            <span ng-show="f.e.$error.required">Enter email</span>
+            <span ng-show="f.e.$error.email">Wrong email</span>
+        </p>
+
+    </form>
+
+    <h3>Your Email: {{ email }}</h3>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("myCtrl", function($scope) {
+            $scope.email = "";
+        });
+    </script>
+
+</body>
+</html>
